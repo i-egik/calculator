@@ -8,41 +8,30 @@ public class Main {
     public static void main(String[] args) {
 
         //Первое число
-System.out.println("Впишите первое число");
-Scanner scanner1 = new Scanner(System.in);
-int num1 = scanner1.nextInt();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Впишите первое число");
+        int num1 = input.nextInt();
 
+        //Второе число
+        System.out.println("Впишите второе число");
+        int num2 = input.nextInt();
 
-//Второе число
-System.out.println("Впишите второе число");
-Scanner scanner2 = new Scanner(System.in);
-int num2 = scanner2.nextInt();
+        //Что нужно сделать
+        System.out.println("Впишите что нужно сделать");
+        char operand = input.next().charAt(0);
 
-//Результат
-        int result;
-
-
-//Что нужно сделать
-
-System.out.println("Впишите что нужно сделать");
-Scanner scanner3 = new Scanner(System.in);
-String operand = scanner3.nextLine();
-
-if (operand == "+"){
-            System.out.println(num1 + num2);
+        if (operand == '+') System.out.println(num1 + num2);
+        else if (operand == '-') {
+            System.out.println(num1 - num2);
+        } else if (operand == '*') {
+            System.out.println(num1 * num2);
+        } else if (operand == '/' && num2 != 0) {
+            System.out.println(num1 / num2);
+        } else if (operand == '/' && num2 == 0) {
+            System.out.println("Делить на ноль ая-яй");
+        } else {
+            System.out.println("Введите знак математического действия");
         }
-/*else  if (operand == "-"){
-    System.out.println(num1 - num2);
-        }
-else if (operand == "*"){
-    System.out.println(num1 * num2);
-}
-else if (operand == "/" && num2 !=0) {
-    System.out.println(num1 / num2);
-}
-else if (operand == "/" && num2 == 0) {
-    System.out.println("Делить на ноль ая-яй");
-}
-/*else {System.out.println("Введите знак математического действия");}*/
-}
+
+    }
 }
